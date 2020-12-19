@@ -1,0 +1,27 @@
+{
+  "name": "learn-maps",
+  "version": "1.0.0",
+  "description": "learning how to create and work with geographic maps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renepromesse/learn-maps.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "node",
+    "javascript",
+    "geographic",
+    "maps"
+  ],
+  "author": "Rene Promesse Ntirenganya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renepromesse/learn-maps/issues"
+  },
+  "homepage": "https://github.com/renepromesse/learn-maps#readme"
+}
