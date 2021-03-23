@@ -4,12 +4,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {busParks} from './busPart';
 import './App.css';
 
-const path1 = `m12 0c-4.4183 2.3685e-15 -8 3.5817-8 8 0 1.421 0.3816 2.75 1.0312 3.906 0.1079 0.192 0.221 0.381 0.3438 0.563l6.625
-  11.531 6.625-11.531c0.102-0.151 0.19-0.311 0.281-0.469l0.063-0.094c0.649-1.156 1.031-2.485 1.031-3.906 0-4.4183-3.582-8-8-8zm0 
-  4c2.209 0 4 1.7909 4 4 0 2.209-1.791 4-4 4-2.2091 0-4-1.791-4-4 0-2.2091 1.7909-4 4-4z`;
-const path2 = `m12 3c-2.7614 0-5 2.2386-5 5 0 2.761 2.2386 5 5 5 2.761 0 5-2.239 5-5 0-2.7614-2.239-5-5-5zm0 2c1.657 0 3 1.3431 3
-  3s-1.343 3-3 3-3-1.3431-3-3 1.343-3 3-3z`;
-
 const PopupInfo = (props) =>{
   const {location, image} = props.info;
   return (
@@ -42,21 +36,33 @@ function App() {
          {busParks.map(park => (
            <Marker key={`park-${park.id}-${park.location}`} latitude={park.coordinates[0]} longitude={park.coordinates[1]}>
              <svg
-              height={24}
-              width={24}
-              viewBox="0 0 24 24"
-              style={{
-                cursor:'pointer',
-                stroke:'none',
-                transform:`translate(${-20/2}px, ${-20}px)`
-              }}
+              width="5.6444445mm"
+              height="9.847393mm"
+              viewBox="0 0 20 34.892337"
               onClick={() => setSelected(park)}
               >
-                <g transform="translate(0 -1028.4)">
-                  <path d={path1} fill="#e74c3c" transform="translate(0 1028.4)"/>
-                  <path d={path2} fill="#c0392b" transform="translate(0 1028.4)"/>
+              <g
+                id="outsideG"
+                transform="translate(-814.59595,-274.38623)">
+                <g
+                  id="innerG"
+                  transform="matrix(1.1855854,0,0,1.1855854,-151.17715,-57.3976)">
+                  <path
+                    d="m 817.11249,282.97118 c -1.25816,1.34277 -2.04623,3.29881 -2.01563,5.13867 0.0639,3.84476 1.79693,5.3002 4.56836,10.59179 0.99832,2.32851 2.04027,4.79237 3.03125,8.87305 0.13772,0.60193 0.27203,1.16104 0.33416,1.20948 0.0621,0.0485 0.19644,-0.51262 0.33416,-1.11455 0.99098,-4.08068 2.03293,-6.54258 3.03125,-8.87109 2.77143,-5.29159 4.50444,-6.74704 4.56836,-10.5918 0.0306,-1.83986 -0.75942,-3.79785 -2.01758,-5.14062 -1.43724,-1.53389 -3.60504,-2.66908 -5.91619,-2.71655 -2.31115,-0.0475 -4.4809,1.08773 -5.91814,2.62162 z"
+                    style={{ cursor:"pointer",display:"inline",opacity:1,fill:"#ff4646",
+                    fillOpacity:1,stroke:"#d73534",strokeWidth:1,strokeMiterlimit:4,
+                    strokeDasharray:"none",strokeOpacity:1}} />
+                  <circle
+                    r="3.0355"
+                    cy="288.25278"
+                    cx="823.03064"
+                    id="path3049"
+                    style={{ cursor:"pointer",display:"inline",opacity:1,
+                    fill:"#590000",fillOpacity:1,strokeWidth:0}} />
                 </g>
-             </svg>
+              </g>
+            </svg>
+
            </Marker>
          ))}
          {selected && (

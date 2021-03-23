@@ -37,11 +37,11 @@
   }
 }
 
-svg {
-  fill: red;
+#innerG:hover > path {
+  fill: #0d0 !important;
 }
-g:hover > path {
-  fill: green;
+#outerG:hover {
+  fill: #0d0;
 }
 /* g > path:last-child:hover {
   fill: green;
