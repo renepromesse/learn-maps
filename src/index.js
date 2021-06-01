@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import ReactGA from 'react-ga';
+const TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID;
+console.log('trackingId', TRACKING_ID);
+
+ReactGA.initialize(TRACKING_ID);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

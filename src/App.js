@@ -3,13 +3,14 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {busParks} from './busPart';
 // import {Asynchronous} from './searchPlace';
+
 import './App.css';
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
-import GoogleMaps from './searchLocation';
-import SearchBox from "@seanhouli/react-mapbox-search";
+// import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+// import DateFnsUtils from '@date-io/date-fns';
+// import GoogleMaps from './searchLocation';
+// import SearchBox from "@seanhouli/react-mapbox-search";
 import { Asynchronous } from './searchPlace';
-const mapBoxApiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+// const mapBoxApiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const PopupInfo = (props) =>{
   const {location, image} = props.info;
@@ -22,7 +23,7 @@ const PopupInfo = (props) =>{
   )
 }
 
-
+ const TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID;
 function App() {
   const [Viewport, setViewport] = useState({
     latitude:-1.9347710147981079,
@@ -31,11 +32,13 @@ function App() {
     width:'100vw',
     height: '80vh'
   });
+ 
+
   const [selected, setSelected] = useState(null);
-  console.log('slected', selected);
-  const handleDateChange = () =>{
-    return console.log('date changed');
-  }
+  console.log('slected and tracking Id', selected, TRACKING_ID);
+  // const handleDateChange = () =>{
+  //   return console.log('date changed');
+  // }
   return (
     <div className="App" style={{border:'1px solid red'}}>
       <div className="pickDate">
