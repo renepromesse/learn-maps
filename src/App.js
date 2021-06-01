@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {busParks} from './busPart';
+import ReactGA from 'react-ga';
 // import {Asynchronous} from './searchPlace';
 
 import './App.css';
@@ -24,6 +25,11 @@ const PopupInfo = (props) =>{
 }
 
  const TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID;
+ const initializeReactGA = () => {
+	ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+  ReactGA.pageview('/');
+  console.log('hello00000000', process.env.REACT_APP_GA_TRACKING_ID);
+};
 function App() {
   const [Viewport, setViewport] = useState({
     latitude:-1.9347710147981079,
@@ -41,6 +47,7 @@ function App() {
   // }
   return (
     <div className="App" style={{border:'1px solid red'}}>
+      {initializeReactGA()}
       <div className="pickDate">
         {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker 
