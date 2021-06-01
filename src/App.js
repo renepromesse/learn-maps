@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {busParks} from './busPart';
+// import {Asynchronous} from './searchPlace';
 import './App.css';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import GoogleMaps from './searchLocation';
+import SearchBox from "@seanhouli/react-mapbox-search";
+import { Asynchronous } from './searchPlace';
+const mapBoxApiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const PopupInfo = (props) =>{
   const {location, image} = props.info;
@@ -26,9 +33,32 @@ function App() {
   });
   const [selected, setSelected] = useState(null);
   console.log('slected', selected);
-  
+  const handleDateChange = () =>{
+    return console.log('date changed');
+  }
   return (
     <div className="App" style={{border:'1px solid red'}}>
+      <div className="pickDate">
+        {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker 
+                disableToolbar
+                variant="dialog"
+                inputVariant="filled"
+                format="MM/dd/yyyy"
+                onChange={handleDateChange}
+            />
+        </MuiPickersUtilsProvider> */}
+        {/* <GoogleMaps/> */}
+        {/* <SearchBox
+            token={mapBoxApiToken}
+            country="US"
+            // callback={({ location, event }) => console.log('found', location, event) }
+            selectColor="#ef4836"
+        /> */}
+        <Asynchronous/>
+        {/* <Asynchronous/> */}
+
+      </div>
       <ReactMapGL {...Viewport}
        onViewportChange={(viewport) => setViewport(viewport)} 
        mapStyle="mapbox://styles/mapbox/streets-v11"
